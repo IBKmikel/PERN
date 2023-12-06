@@ -5,12 +5,12 @@ const router = Router();
 
 router.get('/tasks', getAllTasks);
 
-router.get('/tasks/10', getTask);
+router.get('/tasks/:taskId', getTask);
 
 router.post('/tasks', createTask);
 
-router.delete('/tasks', deleteTask);
+router.delete('/tasks/:taskId', deleteTask);
 
-router.put('/tasks', updateTask);
+router.put('/tasks/:taskId', updateTask);
 
 module.exports = router;
