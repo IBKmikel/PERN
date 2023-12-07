@@ -1,6 +1,7 @@
 import { AppBar, Box, Button, Container, Toolbar, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
+import { AddRounded } from "@mui/icons-material";
 
 export default function Navbar(){
     const history = useNavigate();
@@ -9,13 +10,13 @@ export default function Navbar(){
             <AppBar position="static" color="transparent">
                 <Container>
                     <Toolbar>
-                        <Typography variant="h6" sx={{flexGrow: 1}}>
-                            <Link to="/" style={{color:"#eee"}}> 
-                                PERN
+                        <Typography variant="h5" sx={{flexGrow: 1}}>
+                            <Link to="/"> 
+                                To do list
                             </Link>
                         </Typography>
-                        <Button variant="contained" color="primary" onClick={() => history("tasks/new")}>
-                            New Task
+                        <Button variant="contained" color="success" onClick={() => history("tasks/new")}>
+                            <AddRounded/>
                         </Button>
                     </Toolbar>
                 </Container>

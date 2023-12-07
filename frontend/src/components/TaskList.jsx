@@ -1,3 +1,4 @@
+import { BorderColorRounded, DeleteSweepRounded } from "@mui/icons-material";
 import { Button, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -32,7 +33,11 @@ export default function TaskList(){
 
     return(
         <>
-            <h1>Task List</h1>
+            <br/>
+            <Typography variant="h5" textAlign='center' sx={{fontWeight: 'medium' }}>
+                Pending Tasks 
+            </Typography>
+            <br/>
             {
                 tasks.map((task) => (
                     <Card key={task.id} 
@@ -50,10 +55,10 @@ export default function TaskList(){
                             </div>
                             <div>
                                 <Button variant="contained" color="inherit" onClick={() => history(`/tasks/${task.id}/edit`)}>
-                                    Edit
+                                    <BorderColorRounded />
                                 </Button>
                                 <Button variant="contained" color='warning' onClick={() => handleDelete(task.id)} style={{marginLeft: '.5rem'}}>
-                                    Delete
+                                    <DeleteSweepRounded/>
                                 </Button>
                             </div>
                         </CardContent>
